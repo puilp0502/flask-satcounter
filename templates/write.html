@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block head %}
+    <style>
+
+    </style>
+{% endblock %}
+{% block content %}
+    <form method="post">
+    <div class="row">
+{#        <div class="input-field col s6">#}
+{#        <input id="writer" name="writer" type="text" required/>#}
+{#        <label for="writer">작성자</label>#}
+{#        </div>#}
+
+        <div class="input-field col s12">
+        <textarea id="content" class="materialize-textarea" name="content" required></textarea>
+        <label for="content">내용</label>
+        </div>
+
+    </div>
+    <button class="btn waves-effect waves-light right" type="submit" name="action">작성
+        <i class="material-icons right">send</i>
+    </button>
+    </form>
+{% endblock %}

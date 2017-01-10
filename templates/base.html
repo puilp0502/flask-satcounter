@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>곧3</title>
+    <link rel="stylesheet" href="/static/css/materialize.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="/static/js/jquery-3.1.1.js"></script>
+    <script src="/static/js/materialize.js"></script>
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <div class="container">
+    <h1>수능까지 {{ g.countdown.days }}일</h1>
+    {% if g.user %}
+        <div class="right-align">
+            <span style="margin-right: 10px;">
+                <a href="{{ url_for('user_profile', username=g.user.username) }}">Logged in as {{ g.user.username }}</a>
+            </span>
+            <span><a href="{{ url_for('logout') }}">Logout</a></span>
+        </div>
+    {% else %}
+        <div class="right-align">
+            <span style="margin-right: 10px;"><a href="{{ url_for('login') }}">Login</a></span>
+            <span><a href="{{ url_for('register') }}">Register</a></span>
+        </div>
+    {% endif %}
+    {% block content %}
+    {% endblock %}
+    </div>
+</body>
+</html>
